@@ -30,10 +30,12 @@ public abstract class Entity {
 	public void update(float deltaTime) {
 		if(health == 0)
 			dead = true;
-		int directionX = (int)Math.abs(xMovement);
-		int directionY = (int)Math.abs(yMovement);
-		yPosition += directionX * speed * deltaTime;
-		xPosition += directionY * speed * deltaTime;
+		//Math.abs is only foward movement
+		int directionX = (int)(xMovement);
+		int directionY = (int)(yMovement);
+		//These are switched
+		yPosition += directionY * speed * deltaTime;
+		xPosition += directionX * speed * deltaTime;
 	}
 	
 	/**
