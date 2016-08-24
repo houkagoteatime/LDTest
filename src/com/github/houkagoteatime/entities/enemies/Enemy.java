@@ -7,13 +7,23 @@ import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.github.houkagoteatime.entities.Entity;
 import com.github.houkagoteatime.entities.Player;
 
+/**
+ *Classes that inherit this should be ones that want to kill the player class
+ *remember kids, killing is bad, don't kill others
+ */
 public class Enemy extends Entity{
 
 	private StateMachine<Enemy, EnemyState> stateMachine;
 	private Player player;
 	
+	/**
+	 *States that the enemy should be in
+	 */
 	public enum EnemyState implements State<Enemy> {
 		
+		/**
+		 *Enemy will attempt to move towards the player until they are out of aggro range
+		 */
 		AGGRO() {
 
 			/* (non-Javadoc)
@@ -30,6 +40,9 @@ public class Enemy extends Entity{
 			
 		},
 		
+		/**
+		 *An enemy that is sleeping will only attack if the player is nearby
+		 */
 		SLEEP() {
 
 			/* (non-Javadoc)
@@ -60,11 +73,21 @@ public class Enemy extends Entity{
 		}
 		
 	}
+	/**
+	 * @param health health of the enemy
+	 * @param damage how much damage it does
+	 * @param sprite the enemy sprite
+	 * @param player the player playing the game
+	 */
 	public Enemy(int health, int damage, Sprite sprite, Player player) {
 		super(health, damage, sprite);
 		this.player = player;
 	}
 	
+	/**Should detect if the player is in aggro range
+	 * I have not finished making this because my AP English teacher is a sadist
+	 * @return
+	 */
 	public boolean isPlayerNearby() {
 		return false;
 	}

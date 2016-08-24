@@ -13,10 +13,13 @@ public class Assets implements Disposable, AssetErrorListener{
 	private AssetManager manager;
 	public static final String TAG = Assets.class.getName();
 	
+	/**
+	 * Constructor that creates the AssetManager and loads the assets
+	 */
 	private Assets() {
 		manager = new AssetManager();
 		manager.setErrorListener(this);
-		manager.load("lib/harambe.jpg", Texture.class);
+		manager.load("assets/pictures/harambe.jpg", Texture.class);
 	}
 
 	/**
