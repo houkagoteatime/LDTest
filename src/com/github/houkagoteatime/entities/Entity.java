@@ -142,4 +142,10 @@ public abstract class Entity {
 		return new Vector2(xPosition, yPosition);
 	}
 
+	/**
+	 * @return is dead
+	 */
+	public boolean isDead() {
+		return dead;
+	}
 }
