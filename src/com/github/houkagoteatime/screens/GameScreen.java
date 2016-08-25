@@ -1,9 +1,9 @@
-package com.github.houkagoteamtime.screen;
+package com.github.houkagoteatime.screens;
 
 import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
-import com.github.houkagoteamtime.level.Level;
 import com.github.houkagoteatime.entities.enemies.Enemy;
+import com.github.houkagoteatime.levels.Level;
 
 public class GameScreen implements Screen{
 
@@ -14,14 +14,19 @@ public class GameScreen implements Screen{
 		
 	}
 	
+	/* (non-Javadoc)
+	 * @see com.badlogic.gdx.Screen#render(float)
+	 */
 	@Override
 	public void render(float dt) {
 		level.update(dt);
-		
+		sb.begin();
 		for(Enemy enemy : level.getEnemies()){
-			enemy.getSprite().draw(sb);
+			sb.draw(enemy.getSprite(), enemy.getPosition().x, enemy.getPosition().y);
 		}
-			
+		
+		sb.draw(level.getPlayer().getSprite(), level.getPlayer().getPosition().x, level.getPlayer().getPosition().x);
+		sb.end();	
 		/*for(Weapon.Projectile projectile : projectiles){
 			projectile.draw(sb);
 		}*/

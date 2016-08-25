@@ -1,4 +1,4 @@
-package com.github.houkagoteamtime.level;
+package com.github.houkagoteatime.levels;
 
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -7,7 +7,7 @@ import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.github.houkagoteatime.entities.Player;
 import com.github.houkagoteatime.entities.enemies.Enemy;
 
-public class Level {
+public abstract class Level {
 	
 	private Player player;
 	private ArrayList<Enemy> enemies;
@@ -16,6 +16,11 @@ public class Level {
 	public Level(String path) {
 		loadLevel(path);
 	}
+	
+	/**
+	 * levels should override this for different enemy spawns
+	 */
+	public abstract void spawnEnemies();
 
 	public void update(float dt) {
 		
