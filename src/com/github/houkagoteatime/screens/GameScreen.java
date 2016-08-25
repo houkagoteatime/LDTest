@@ -10,8 +10,8 @@ public class GameScreen implements Screen{
 	private SpriteBatch sb;
 	private Level level;
 	
-	public GameScreen() {
-		
+	public GameScreen(SpriteBatch batch) {
+		sb = batch;
 	}
 	
 	/* (non-Javadoc)

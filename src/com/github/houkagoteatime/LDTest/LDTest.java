@@ -4,6 +4,7 @@ import com.badlogic.gdx.backends.lwjgl.LwjglApplication;
 import com.badlogic.gdx.backends.lwjgl.LwjglApplicationConfiguration;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+import com.github.houkagoteatime.screens.GameScreen;
 
 /**
  *The entry point of the game
@@ -11,7 +12,7 @@ import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 public class LDTest extends Game{
 	private SpriteBatch batch;
 	private BitmapFont font;
-
+	
 	public static void main(String[] args) {
 		LwjglApplicationConfiguration config = new LwjglApplicationConfiguration();
 		config.title = "test";
@@ -27,6 +28,8 @@ public class LDTest extends Game{
 	public void create() {
 		batch = new SpriteBatch();
 		font = new BitmapFont();
+		//this is the only screen we have. In reality, we woud be setting the main menu screen first
+		this.setScreen(new GameScreen(batch));
 	}
 	
 	/* (non-Javadoc)

@@ -3,7 +3,6 @@ package com.github.houkagoteatime.levels;
 import java.util.ArrayList;
 import java.util.Iterator;
 
-import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.github.houkagoteatime.entities.Player;
 import com.github.houkagoteatime.entities.enemies.Enemy;
 
