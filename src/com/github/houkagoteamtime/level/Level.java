@@ -40,17 +40,6 @@ public class Level {
 	    }*/
 	}
 	
-	public void render(SpriteBatch sb) {
-		
-		for(Enemy enemy : enemies){
-			enemy.getSprite().draw(sb);
-		}
-		
-		/*for(Weapon.Projectile projectile : projectiles){
-			projectile.draw(sb);
-		}*/
-	}
-	
 	public void loadLevel(String path) {
 		
 	}

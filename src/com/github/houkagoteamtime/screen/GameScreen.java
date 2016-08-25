@@ -1,10 +1,13 @@
 package com.github.houkagoteamtime.screen;
 
 import com.badlogic.gdx.Screen;
+import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.github.houkagoteamtime.level.Level;
+import com.github.houkagoteatime.entities.enemies.Enemy;
 
 public class GameScreen implements Screen{
 
+	private SpriteBatch sb;
 	private Level level;
 	
 	public GameScreen() {
@@ -15,6 +18,13 @@ public class GameScreen implements Screen{
 	public void render(float dt) {
 		level.update(dt);
 		
+		for(Enemy enemy : level.getEnemies()){
+			enemy.getSprite().draw(sb);
+		}
+			
+		/*for(Weapon.Projectile projectile : projectiles){
+			projectile.draw(sb);
+		}*/
 	}
 	
 	@Override
