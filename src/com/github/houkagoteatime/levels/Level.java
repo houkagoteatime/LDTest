@@ -3,11 +3,14 @@ package com.github.houkagoteatime.levels;
 import java.util.ArrayList;
 import java.util.Iterator;
 
+import com.badlogic.gdx.graphics.Texture;
+import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.maps.MapProperties;
 import com.badlogic.gdx.maps.tiled.TiledMap;
 import com.badlogic.gdx.maps.tiled.TiledMapRenderer;
 import com.badlogic.gdx.maps.tiled.TmxMapLoader;
 import com.badlogic.gdx.maps.tiled.renderers.OrthogonalTiledMapRenderer;
+import com.github.houkagoteatime.LDTest.Assets;
 import com.github.houkagoteatime.entities.Player;
 import com.github.houkagoteatime.entities.enemies.Enemy;
 
@@ -34,6 +37,10 @@ public abstract class Level {
 		setTiledMapRenderer(tiledMap);
 		setMapProperties(tiledMap);
 		calcMapProperties(mapProp);
+		enemies = new ArrayList<Enemy>();
+		player = new Player(500, 2000000, new Sprite(new Texture("assets/pictures/harambe.jpg")));
+		Enemy e = new Enemy(100, 20, new Sprite(new Texture("assets/pictures/harambe.jpg")), player);
+		enemies.add(e);
 	}
 	
 	/**
